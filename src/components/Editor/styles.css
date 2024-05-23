@@ -1,0 +1,7 @@
+.editor__result {
+  height: calc(100vh - 22.5rem);
+}
+
+.result {
+  width: calc(100vw - 325px);
+}

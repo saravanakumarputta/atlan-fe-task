@@ -1,0 +1,15 @@
+.tab.active {
+  background: #f1f1f1;
+}
+
+.tab {
+  background-color: #fff;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}

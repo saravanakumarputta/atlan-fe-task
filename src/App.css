@@ -1,0 +1,12 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Pagecontainer {
+  height: calc(100vh - 4.2rem);
+}
+
+.resultTable {
+  width: calc(100vw - 354px);
+}
