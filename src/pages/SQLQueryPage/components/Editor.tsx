@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import { EditorToolBar } from "../../../components/Editor/EditorToolbar";
 import { PersonResult } from "../../../components/Editor/EditorResult";
 import { useSqlQuery } from "../hooks/UseSqlQuery";
-import { SuppliersResult } from "@/components/Editor/SuppliersResult";
+import { SuppliersResult } from "../../../components/Editor/SuppliersResult";
 
 type EditorProps = {
   isActiveEditor: boolean;
