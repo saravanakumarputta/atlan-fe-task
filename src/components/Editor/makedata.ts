@@ -1,4 +1,4 @@
-import { Product } from "@/contracts/Product";
+// import { Product } from "@/contracts/Product";
 import { faker } from "@faker-js/faker";
 
 export type Person = {
