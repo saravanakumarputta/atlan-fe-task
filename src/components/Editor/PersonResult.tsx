@@ -71,7 +71,7 @@ const PersonColumns: ColumnDef<Person>[] = [
   },
 ];
 
-export const PersonResult = () => {
+const PersonResult = () => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
   const [data] = React.useState(() => makeData(1000));
@@ -172,3 +172,5 @@ export const PersonResult = () => {
     </div>
   );
 };
+
+export default PersonResult;

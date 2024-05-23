@@ -42,7 +42,7 @@ const SupplierColumns: ColumnDef<Supplier>[] = [
   },
 ];
 
-export const SuppliersResult = () => {
+const SuppliersResult = () => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
   const [data] = React.useState(() => makeSuppliersData(1000));
@@ -143,3 +143,5 @@ export const SuppliersResult = () => {
     </div>
   );
 };
+
+export default SuppliersResult;

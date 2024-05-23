@@ -14,7 +14,13 @@ export const Header: React.FC<{ className: string }> = ({ className }) => {
       <img src={AtlanLogo} alt="atlan-logo" className="w-[6rem]" />
       <a href="#" className="flex items-center" target="__blank">
         <GitHubLogoIcon className="mr-1" />
-        <span className="text-foreground">View on github</span>
+        <a
+          href="https://github.com/saravanakumarputta/atlan-fe-task"
+          target="_blank"
+          className="text-foreground"
+        >
+          View on github
+        </a>
       </a>
     </nav>
   );

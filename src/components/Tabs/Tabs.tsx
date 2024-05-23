@@ -1,8 +1,13 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, Suspense } from "react";
 import { PlusIcon } from "@radix-ui/react-icons";
 import "./styles.css";
 import Tab from "./Tab";
-import { Editor } from "../../pages/SQLQueryPage/components/Editor";
+
+import React from "react";
+
+const Editor = React.lazy(
+  () => import("../../pages/SQLQueryPage/components/Editor")
+);
 
 interface Tab {
   id: number;
@@ -60,7 +65,9 @@ const TabContainer = () => {
               tab.id === activeTab ? "active" : ""
             }`}
           >
-            <Editor id={tab.id} isActiveEditor={tab.id === activeTab} />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Editor id={tab.id} isActiveEditor={tab.id === activeTab} />
+            </Suspense>
           </div>
         ))}
       </div>

@@ -2,6 +2,8 @@
 
 This project demonstrates the ability to run the sql queries via browser and get the insights of the query, multiple tabs support and history of executed queries and an option to save queries.
 
+[Walkthrough](https://www.loom.com/share/201252257f9d45b89e3de8e9c8300188?sid=40ac74ec-9f58-471b-bd44-251688406b76)
+
 ## Features implemented
 
 - Execute the custom SQL queries from editor or from the saved/recently executed queries from side menu.
@@ -22,6 +24,12 @@ This project demonstrates the ability to run the sql queries via browser and get
 - `@tanstack/react-virtual` - for displaying large set of data
 
 ## Performance
+
+Intial Performance was show below, Report generated via Lighthouse
+
+### Optimisations made
+
+- Lazy loaded the Editor component
 
 ## Scripts
 

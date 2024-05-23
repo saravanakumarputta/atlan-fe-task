@@ -1,17 +1,24 @@
 import { Textarea } from "../../../components/ui/textarea";
-import { useCallback } from "react";
+import { useCallback, Suspense } from "react";
 
 import { EditorToolBar } from "../../../components/Editor/EditorToolbar";
-import { PersonResult } from "../../../components/Editor/EditorResult";
 import { useSqlQuery } from "../hooks/UseSqlQuery";
-import { SuppliersResult } from "../../../components/Editor/SuppliersResult";
+import React from "react";
+
+const SuppliersResult = React.lazy(
+  () => import("../../../components/Editor/SuppliersResult")
+);
+
+const PersonResult = React.lazy(
+  () => import("../../../components/Editor/PersonResult")
+);
 
 type EditorProps = {
   isActiveEditor: boolean;
   id: number;
 };
 
-export const Editor: React.FC<EditorProps> = ({ isActiveEditor }) => {
+const Editor: React.FC<EditorProps> = ({ isActiveEditor }) => {
   const { query, setQuery, executeQuery, saveQuery, queryResult } =
     useSqlQuery(isActiveEditor);
 
@@ -37,10 +44,20 @@ export const Editor: React.FC<EditorProps> = ({ isActiveEditor }) => {
       />
       {queryResult ? (
         <div className="mt-4 border-t border-black resultTable">
-          {queryResult === "customers" ? <PersonResult /> : null}
-          {queryResult === "suppliers" ? <SuppliersResult /> : null}
+          {queryResult === "customers" ? (
+            <Suspense fallback={<div>Loading...</div>}>
+              <PersonResult />
+            </Suspense>
+          ) : null}
+          {queryResult === "suppliers" ? (
+            <Suspense fallback={<div>Loading...</div>}>
+              <SuppliersResult />
+            </Suspense>
+          ) : null}
         </div>
       ) : null}
     </>
   );
 };
+
+export default Editor;
