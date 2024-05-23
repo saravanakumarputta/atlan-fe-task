@@ -3,14 +3,17 @@ import { useCallback, useEffect, useState } from "react";
 
 const sendRecentQueryEvent = (query: string) => {
   const event = new CustomEvent(Events.RECENT_QUERY, {
-    detail: query,
+    detail: {
+      query,
+      timestamp: new Date(),
+    },
   });
   document.dispatchEvent(event);
 };
 
-const sendSaveQueryEvent = (query: string) => {
+const sendSaveQueryEvent = (queryObj: Record<string, string>) => {
   const event = new CustomEvent(Events.SAVE_QUERY, {
-    detail: query,
+    detail: queryObj,
   });
   document.dispatchEvent(event);
 };
@@ -44,9 +47,9 @@ export const useSqlQuery = (isActiveEditor: boolean) => {
     }
   }, [query, handleSetQueryResult]);
 
-  const saveQuery = () => {
+  const saveQuery = (name: string) => {
     if (query) {
-      sendSaveQueryEvent(query);
+      sendSaveQueryEvent({ query, name });
     }
   };
 

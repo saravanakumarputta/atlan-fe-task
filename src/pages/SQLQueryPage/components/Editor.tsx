@@ -2,7 +2,6 @@ import { Textarea } from "../../../components/ui/textarea";
 import { useCallback } from "react";
 
 import { EditorToolBar } from "../../../components/Editor/EditorToolbar";
-import { EditorFooter } from "../../../components/Editor/EditorFooter";
 import { PersonResult } from "../../../components/Editor/EditorResult";
 import { useSqlQuery } from "../hooks/UseSqlQuery";
 import { SuppliersResult } from "@/components/Editor/SuppliersResult";
@@ -15,8 +14,6 @@ type EditorProps = {
 export const Editor: React.FC<EditorProps> = ({ isActiveEditor }) => {
   const { query, setQuery, executeQuery, saveQuery, queryResult } =
     useSqlQuery(isActiveEditor);
-
-  console.log({ queryResult });
 
   const handleQueryChange = useCallback((event: any) => {
     const value = event.target.value;
@@ -44,8 +41,6 @@ export const Editor: React.FC<EditorProps> = ({ isActiveEditor }) => {
           {queryResult === "suppliers" ? <SuppliersResult /> : null}
         </div>
       ) : null}
-
-      <EditorFooter onExport={() => {}} />
     </>
   );
 };

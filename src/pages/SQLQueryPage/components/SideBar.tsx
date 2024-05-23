@@ -29,15 +29,26 @@ export const SideBar = () => {
               return (
                 <div
                   key={idx}
-                  className="flex gap-2 hover:bg-secondary/80 cursor-pointer p-1 rounded-md"
+                  className="felex flex-col hover:bg-secondary/80 cursor-pointer p-1 rounded-md"
                   onClick={(event: any) => {
                     event.stopPropagation();
-                    handleQueryClick(query);
+                    handleQueryClick(query.query);
                   }}
                 >
-                  <p className="text-sm font-regular">{`[${idx + 1}]`}</p>
-                  <p className="text-sm font-regular truncate" title={query}>
-                    {query}
+                  <div className="flex gap-2">
+                    <p className="text-sm font-regular">{`[${idx + 1}]`}</p>
+                    <p
+                      className="text-sm font-regular truncate"
+                      title={query.query}
+                    >
+                      {query.name}
+                    </p>
+                  </div>
+                  <p
+                    className="text-sm font-regular truncate text-muted-foreground"
+                    title={query.query}
+                  >
+                    {query.query}
                   </p>
                 </div>
               );
@@ -56,15 +67,27 @@ export const SideBar = () => {
               return (
                 <div
                   key={idx}
-                  className="flex gap-2 hover:bg-secondary/80 cursor-pointer p-1 rounded-md"
+                  className="felex flex-col hover:bg-secondary/80 cursor-pointer p-1 rounded-md"
                   onClick={(event: any) => {
                     event.stopPropagation();
-                    handleQueryClick(query);
+                    handleQueryClick(query.query);
                   }}
                 >
-                  <p className="text-sm font-regular">{`[${idx + 1}]`}</p>
-                  <p className="text-sm font-regular truncate" title={query}>
-                    {query}
+                  <div className="flex gap-2">
+                    <p className="text-sm font-regular">{`[${idx + 1}]`}</p>
+                    <p
+                      className="text-sm font-regular truncate"
+                      title={query.query}
+                    >
+                      {query.query}
+                    </p>
+                    <br />
+                  </div>
+                  <p
+                    className="text-sm font-regular truncate text-muted-foreground ml-7"
+                    title={query.query}
+                  >
+                    {query.timestamp.toLocaleString()}
                   </p>
                 </div>
               );
