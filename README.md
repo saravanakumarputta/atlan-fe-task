@@ -10,8 +10,7 @@ This project demonstrates the ability to run the sql queries via browser and get
 - Saved Queries - query can be saved and it will be displayed in the side menu bar
 - Query history - all executed queries are saved for the session.
 - Multiple tabs - this helps in vast cases where the multiple queries results can be maintained instead of executing different queries in a sigle tab
-- Virtualisation - handling large data sets to in the result set.
-- Data export - result set of a query can be exported for smaller size of data.
+- Virtualisation - Displaying the large data sets to in the browser without crashing.
 
 ## Libraries used
 
@@ -22,6 +21,7 @@ This project demonstrates the ability to run the sql queries via browser and get
 - `@radix-ui/react-icons` - for icons in the buttons and tabs.
 - `@tanstack/react-table` - for handling the data table functionalities like sorting etc.,
 - `@tanstack/react-virtual` - for displaying large set of data
+- `chart.js` - for visual data representation.
 
 ## Performance
 - Intial Performance was show below, Report generated via Lighthouse
@@ -39,7 +39,9 @@ This project demonstrates the ability to run the sql queries via browser and get
 - Lightouse report
 <img width="1511" alt="Screenshot 2024-05-23 at 11 56 24 AM" src="https://github.com/saravanakumarputta/atlan-fe-task/assets/19649856/dc7a6f0e-8c96-4127-8963-464bfacc6edd">
 <img width="732" alt="Screenshot 2024-05-23 at 11 56 33 AM" src="https://github.com/saravanakumarputta/atlan-fe-task/assets/19649856/23442e1f-3f85-48d6-8268-b9b7425f9e37">
+<br/>
 - Build Statistics
+<br/>
 <img width="792" alt="Screenshot 2024-05-23 at 11 54 34 AM" src="https://github.com/saravanakumarputta/atlan-fe-task/assets/19649856/b5bc4074-5034-49fe-b6ff-f175a5e1bda6">
 
 
